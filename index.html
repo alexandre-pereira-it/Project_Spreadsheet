@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spreadsheet</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-spacing: 0;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <!-- Page Header -->
+    <header>
+        <h1>Simulador de Planilha em HTML</h1>
+        <h3>Apenas calculos basicos podem ser feitos com esta planilha(nao esta no momento a trabalhar)</h3>
+    </header>
+    <!-- Main Body -->
+    <main>
+        <form action="#">
+            <!-- Table -->
+            <table>
+                <tr>
+                    <th></th>
+                    <th>
+                        <h3>A</h3>
+                    </th>
+                    <th>
+                        <h3>B</h3>
+                    </th>
+                    <th>
+                        <h3>C</h3>
+                    </th>
+                    <th>
+                        <h3>D</h3>
+                    </th>
+                    <th>
+                        <h3>E</h3>
+                    </th>
+                </tr>
+                <!-- Row 1 -->
+                <tr>
+                    <th>
+                        <h3>1</h3>
+                    </th>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_A1"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_A2"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_A3"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_A4"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_A5"></td>
+                </tr>
+                <!-- Row 2 -->
+                <tr>
+                    <th>
+                        <h3>2</h3>
+                    </th>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_B1"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_B2"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_B3"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_B4"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_B5"></td>
+                </tr>
+                <!-- Row 3 -->
+                <tr>
+                    <th>
+                        <h3>3</h3>
+                    </th>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_C1"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_C2"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_C3"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_C4"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_C5"></td>
+                </tr>
+                <!-- Row 4 -->
+                <tr>
+                    <th>
+                        <h3>4</h3>
+                    </th>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_D1"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_D2"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_D3"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_D4"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_D5"></td>
+                </tr>
+                <!-- Row 5 -->
+                <tr>
+                    <th>
+                        <h3>5</h3>
+                    </th>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_E1"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_E2"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_E3"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_E4"></td>
+                    <td><input type="text" pattern="^[0-9]+$" aria-label="Cell_E5"></td>
+                </tr>
+            </table><br>
+            <!-- Operation Selection -->
+            <label for="operation"><strong>Selecione a operação:</strong></label>
+            <select name="operation" id="operation">
+                <option value="plus">Soma</option>
+                <option value="minus">Subtração</option>
+                <option value="multiply">Multiplicação</option>
+                <option value="division">Divisão</option>
+            </select><br><br>
+            <!-- Starting Cell -->
+            <label for="start"><strong>Celula de Inicio:</strong></label>
+            <select name="start" id="start">
+                <option value="A1_cell">A1</option>
+                <option value="A2_cell">A2</option>
+                <option value="A3_cell">A3</option>
+                <option value="A4_cell">A4</option>
+                <option value="A5_cell">A5</option>
+                <option value="B1_cell">B1</option>
+                <option value="B2_cell">B2</option>
+                <option value="B3_cell">B3</option>
+                <option value="B4_cell">B4</option>
+                <option value="B5_cell">B5</option>
+                <option value="C1_cell">C1</option>
+                <option value="C2_cell">C2</option>
+                <option value="C3_cell">C3</option>
+                <option value="C4_cell">C4</option>
+                <option value="C5_cell">C5</option>
+                <option value="D1_cell">D1</option>
+                <option value="D2_cell">D2</option>
+                <option value="D3_cell">D3</option>
+                <option value="D4_cell">D4</option>
+                <option value="D5_cell">D5</option>
+                <option value="E1_cell">E1</option>
+                <option value="E2_cell">E2</option>
+                <option value="E3_cell">E3</option>
+                <option value="E4_cell">E4</option>
+                <option value="E5_cell">E5</option>
+            </select>
+            <!-- Finishing Cell -->
+            <label for="end"><strong>Celula de fim:</strong></label>
+            <select name="end" id="end">
+                <option value="A1_cell">A1</option>
+                <option value="A2_cell">A2</option>
+                <option value="A3_cell">A3</option>
+                <option value="A4_cell">A4</option>
+                <option value="A5_cell">A5</option>
+                <option value="B1_cell">B1</option>
+                <option value="B2_cell">B2</option>
+                <option value="B3_cell">B3</option>
+                <option value="B4_cell">B4</option>
+                <option value="B5_cell">B5</option>
+                <option value="C1_cell">C1</option>
+                <option value="C2_cell">C2</option>
+                <option value="C3_cell">C3</option>
+                <option value="C4_cell">C4</option>
+                <option value="C5_cell">C5</option>
+                <option value="D1_cell">D1</option>
+                <option value="D2_cell">D2</option>
+                <option value="D3_cell">D3</option>
+                <option value="D4_cell">D4</option>
+                <option value="D5_cell">D5</option>
+                <option value="E1_cell">E1</option>
+                <option value="E2_cell">E2</option>
+                <option value="E3_cell">E3</option>
+                <option value="E4_cell">E4</option>
+                <option value="E5_cell">E5</option>
+            </select><br><br>
+            <!-- Result Cell -->
+            <label for="result"><strong>Celula de resultado:</strong></label>
+            <select name="result" id="result">
+                <option value="A1_cell">A1</option>
+                <option value="A2_cell">A2</option>
+                <option value="A3_cell">A3</option>
+                <option value="A4_cell">A4</option>
+                <option value="A5_cell">A5</option>
+                <option value="B1_cell">B1</option>
+                <option value="B2_cell">B2</option>
+                <option value="B3_cell">B3</option>
+                <option value="B4_cell">B4</option>
+                <option value="B5_cell">B5</option>
+                <option value="C1_cell">C1</option>
+                <option value="C2_cell">C2</option>
+                <option value="C3_cell">C3</option>
+                <option value="C4_cell">C4</option>
+                <option value="C5_cell">C5</option>
+                <option value="D1_cell">D1</option>
+                <option value="D2_cell">D2</option>
+                <option value="D3_cell">D3</option>
+                <option value="D4_cell">D4</option>
+                <option value="D5_cell">D5</option>
+                <option value="E1_cell">E1</option>
+                <option value="E2_cell">E2</option>
+                <option value="E3_cell">E3</option>
+                <option value="E4_cell">E4</option>
+                <option value="E5_cell">E5</option>
+            </select><br><br>
+            <!-- Submit Button -->
+            <input type="submit" value="Calcular">
+            <!-- Result -->
+            <label for="result_text">
+                <h3>Resultado:</h3>
+            </label>
+            <output name="result_text" for="start end"></output>
+        </form>
+    </main>
+</body>
+
+</html>
